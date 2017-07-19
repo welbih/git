@@ -86,3 +86,45 @@ git log --stat
 // Combinar as várias opções do comando git log
 // Mostrar um resumo das alterações dos últimos dois commits:
 git log -n 2 --oneline --stat
+
+// Verificar as diferenças entre o arquivo alterado e o que
+// foi comitado anteriormente
+git diff
+// git diff não pode ser utilizado para arquivos que não
+// tenha sido rastreados pelo menos uma vez
+// quando sem parametros, mostra a diferença entre os arquivos
+// no diretório de trabalho e a área de stage.
+// serve apenas para exibir as mudanças ainda não rastreadas
+
+// Mostra a diferença entre os arquivos na área de stage e a
+// última versão do que foi commitada utilizando a opção --staged:
+git diff --staged
+
+// Exibir alterações dentro e fora da área de stage
+// Só é possível atraves do código do ultimo commit
+// do arquivo fora da area do stage
+git diff codigoDoUltimoCommit ou
+
+// Verificar diferenças entre dois commits específicos
+git diff codigoDoPrimeiro..CodigoDoSegundoCommit
+
+// Exibir os commits apartir de um código, os commits anteriores
+git diff codigoDoCommit~2
+// O 2 representa o commits anteriores
+
+// Se houvesse alguma modificação ainda não commitada, fora ou
+// dentro do stage, as linhas alteradas também seriam mostradas
+// na resposta do comando git diff 8877887~2.
+
+// Já no comando
+git diff 222ccc..88779988
+// Não exibe modificações ainda não comitadas, mas apenas as
+// Mudanças que aconteceram entre os dois commits especificos
+
+// Remover e adicionar no stage
+git rm nomeDoArquivo.html
+// Depois commitar o arquivo deletado
+
+// Alterar nome do arquivo
+git mv nomeAntigo.css nomeNovo.css
+// Depois commitar
