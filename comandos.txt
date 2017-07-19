@@ -128,3 +128,39 @@ git rm nomeDoArquivo.html
 // Alterar nome do arquivo
 git mv nomeAntigo.css nomeNovo.css
 // Depois commitar
+
+// Mover arquivo para subdiretório
+git mv principal.js js/principal.js
+// O diretório já deve está criado
+// Depois commitamos
+git commit -am "Mensagem para descrever a alteração"
+
+// Desfazer mudanças não rastreadas, ou seja, fora da area stage
+git checkout -- arquivo.html
+
+// Recuperar arquivos removidos acidentalmente
+git checkout -- arquivo.html
+
+// Desfazendo mudanças já rastreadas, presevando a modificação
+// no arquivo
+git reset --index.html
+
+// Para retirar todos os arquivos da area de stage
+// preservando suas modificações
+git reset
+
+// Retirar do stage e desfazer as modificações dos arquivos
+git reset --hard
+
+// Desfazendo mudanças já comitadas
+git revert --no-edit codigoDoCommit
+// Poderíamos passar o HEAD que no nosso caso aponta
+// para o nosso último commit
+
+// O comando git revert efeta um novo commit com a versão
+// anterior dos arquivos
+
+// Desfazer alterações já commitadas sobreescrevendo
+// o histórico do repositório
+git reset --hard codigoDoCommit
+// Não é muito usado pois queremos manter o histórico
