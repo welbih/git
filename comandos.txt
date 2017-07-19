@@ -1,0 +1,88 @@
+// se identificar no git
+git config --global user.name "Fulano da silva"
+git config --global user.email fulandodasilva@gmail.com
+
+// mostra onde é a pasta pessoal
+echo ~
+
+// entra na pasta
+cd ~/pasta
+
+// transforma o diretório em um repositório do Git
+git init
+
+// Ver a situação dos arquivo no repositório do git
+git status
+
+// torna o arquivo rastreado pelo git(stage)
+git add arquivo.txt
+
+// Grava as mudanças no repositório
+git commit -m "Comentário referente a modificação"
+
+// Exibe o histórico das alterações gravadas no repositório
+git log
+
+// Aponta o repositório da nossa máquina para o repositório do GitHub
+git remote add  origin https://github.com/fulanodasilva/pastacriada.git
+
+// Envia as mudanças do git local para o Github
+// Será solicitado usuário e senha do GitHub
+git push origin master
+
+// Para ver todas as alterações do projeto no GitHub
+Acesse https://github.com/fulanodasilva/nomedapasta/commits/master
+
+// Para obter o código do projeto lá do GitHub
+// Esteja no diretório da pasta que você criou localmente
+git clone https://github.com/fulanodasilva/nomedoarquivo.git
+
+// Parar de utilizar o git em um pasta
+apague o arquivo oculto .git
+
+// Rastrear todos os arquivos
+git add .
+
+// Ignorar aquivos para não serem rastreados no git
+Crie um arquivo chamado .gitignore no diretório principal
+do projeto, com os nomes dos arquivos queremos ignorar.
+ex: de conteúdo:
+todo.txt
+tmp/
+Logo após rastreie o arquivo .gitignore
+
+// Para rastreiar todos os arquivos com determinada extensão
+// utilize dentro do .gitignore
+*.log no caso de arquivos .log
+imagens/*.bmp no caso de arquivso em subpastas
+
+// Exemplo de arquivos de linguagem de programação utilizando
+// o .gitignore acesse:
+https://github.com/github/gitignore
+
+// Rastrear e commitar em um único comando
+// Só funciona se o arquivo já tiver sido rastreado uma vez
+git commit -am "Mensagem com descrição"
+// Se o arquivo for novo deve utilizado git add arquivo.txt (stage)
+
+=================== histórico do Repositório===================
+
+// Histórico das mudanças commitadas
+git log
+
+// para exibir os ultimos commits
+git log -n2
+
+// Resumo bem conciso dos commits
+git log --oneline
+
+// Resumo dos arquivos alterados
+git log --stat
+
+// Quando aparecer (:) aperte Enter, serão mostrados os
+// Resultados restantes
+// Para sair do git log aperte a tecla "q."
+
+// Combinar as várias opções do comando git log
+// Mostrar um resumo das alterações dos últimos dois commits:
+git log -n 2 --oneline --stat
