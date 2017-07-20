@@ -51,7 +51,7 @@ todo.txt
 tmp/
 Logo após rastreie o arquivo .gitignore
 
-// Para rastreiar todos os arquivos com determinada extensão
+// Para não rastreiar todos os arquivos com determinada extensão
 // utilize dentro do .gitignore
 *.log no caso de arquivos .log
 imagens/*.bmp no caso de arquivso em subpastas
@@ -157,7 +157,7 @@ git revert --no-edit codigoDoCommit
 // Poderíamos passar o HEAD que no nosso caso aponta
 // para o nosso último commit
 
-// O comando git revert efeta um novo commit com a versão
+// O comando git revert efetua um novo commit com a versão
 // anterior dos arquivos
 
 // Desfazer alterações já commitadas sobreescrevendo
