@@ -164,3 +164,90 @@ git revert --no-edit codigoDoCommit
 // o histórico do repositório
 git reset --hard codigoDoCommit
 // Não é muito usado pois queremos manter o histórico
+
+============= Cap 4 Trabalhando com repositório remoto========
+
+// criando um repositório remoto
+git init --bare moveis-ecologicos.git
+// --bare serve para que o Git não crie um diretório de trabalho
+// impedindo que commits sejam efetuados deiretamente no servidor
+
+// Adicionando repositório remoto da rede
+git remote add servidor file://192.168.1.1/diretorio/exemplo.git
+// "servidor" foi o nome dado ao repositório remoto adicionado
+
+// Listando os repositórios remotos
+git remote
+
+// Listando os repositórios remotos com URI
+git remote -v
+
+//Alterando o name dos repositórios remotos
+git remote rename servidor outronome
+
+//Se o endereço de IP fosse alterado teríamos que alterar
+// no git da seguinte forma
+git remote set-url servidor file//192.168.1.2
+
+//Enviando commits para o repositório remoto
+git push servidor master
+
+// Clonando o repositório remoto
+git clone file://192.168.1.1/diretorio/exemplo.git
+
+// Sincronizando o repositório local
+git pull servidor master
+
+// Protocolo local
+git clone file://192.168.1.1/diretorio/exemplo.git
+
+// Protocolo SSH
+git clone root@192.168.1.1:/diretorio/exemplo.git
+
+// Protocolo Git
+git clone git://192.168.1.1/diretorio/exemplo.git
+
+// Protocolo Http/Https
+git clone https://github.com/welbih/citacoes.git
+
+=====Cap 6. Organizando o trabalho com branches=======
+
+//Listar as Branches
+git branch
+
+//Listando as Branches com os commits associados
+git branch -v
+
+//Listar commit com seus repectivos pais
+//e para qual branches estão apontando
+git log --oneline --decorate --parents
+
+// Criar um branch
+git branch nomeDoBranch
+
+// Trocando de Branch
+git checkout nomeDoBranch
+
+// Criando e já trocando para uma branch
+git checkout -b nomeDaBranch
+
+// Deletando um Branch
+git branch -d nomeDoBranch
+// só funciona se não tiver nenhum commit associado
+
+// Deletar Branch com commits associados
+git branch -D nomeDaBranch
+
+// Verificar branches não mescladas
+git branch --no-merged
+
+// Verificar branches mesclados
+git branch --merged
+
+// Mesclando alteracoes com merge
+git merge nomeDaBranch -m "Mensagem discritiva"
+
+// Maneira alternativa de mesclar duas branches
+git rebase nomeDaBranchNaoMesclada
+
+// ================= Pág. 108 == Continua.
